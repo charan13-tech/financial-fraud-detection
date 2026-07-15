@@ -1,57 +1,67 @@
 # 💳 Financial Fraud Detection using Machine Learning
 
-> An end-to-end machine learning pipeline for detecting fraudulent financial transactions using Logistic Regression and XGBoost.
+An end-to-end Machine Learning project that detects fraudulent financial transactions using supervised learning techniques. The project includes data preprocessing, feature engineering, model training, hyperparameter optimization, explainable AI (SHAP), and deployment through an interactive Streamlit web application.
 
 ---
 
-## 📖 Overview
+## 🚀 Project Overview
 
-Financial fraud has become a major challenge in digital payment systems. This project develops a machine learning pipeline capable of identifying fraudulent transactions using supervised learning techniques.
+Financial fraud is a significant challenge for digital payment systems. This project builds an intelligent fraud detection system capable of classifying financial transactions as **Fraudulent** or **Legitimate**.
 
-The project includes exploratory data analysis, data preprocessing, feature engineering, model training, hyperparameter tuning, and model evaluation. Two machine learning models—Logistic Regression and XGBoost—are compared to identify the most effective approach for fraud detection.
+The project follows a complete machine learning workflow from raw data to deployment, emphasizing both predictive performance and model interpretability.
 
 ---
 
 ## ✨ Features
 
-- Exploratory Data Analysis (EDA)
-- Data Cleaning & Preprocessing
-- Feature Engineering
-- Scikit-Learn Pipeline
-- Logistic Regression Baseline
-- XGBoost Classifier
-- Hyperparameter Tuning using RandomizedSearchCV
-- Model Comparison
-- Feature Importance Analysis
+- 📊 Exploratory Data Analysis (EDA)
+- 🧹 Data Cleaning & Preprocessing
+- ⚙️ Feature Engineering
+- 🔄 Scikit-Learn Pipeline
+- 📈 Logistic Regression Baseline
+- 🚀 XGBoost Classifier
+- 🎯 Hyperparameter Tuning using RandomizedSearchCV
+- 📉 Model Evaluation & Comparison
+- 🔍 SHAP Explainability
+- 🌐 Interactive Streamlit Web Application
+- 💾 Model Serialization using Joblib
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
 | Property | Value |
 |----------|-------|
-| Problem | Binary Classification |
 | Domain | Financial Fraud Detection |
+| Problem Type | Binary Classification |
 | Transactions | 6,362,620 |
 | Features | 11 |
+| Target | isFraud |
 
-> **Note:** The dataset is not included due to its size.
+> **Note:** The dataset is not included in this repository because of its large size.
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Tech Stack
+
+### Programming
 
 - Python
+
+### Libraries
+
 - Pandas
 - NumPy
 - Matplotlib
-- Seaborn
 - Scikit-Learn
 - XGBoost
+- SHAP
+- Joblib
+- Streamlit
 
 ---
 
-# ⚙️ Machine Learning Workflow
+# ⚙️ Machine Learning Pipeline
 
 ```text
 Raw Dataset
@@ -66,10 +76,10 @@ Data Cleaning
 Feature Engineering
       │
       ▼
-Train/Test Split
+Train-Test Split
       │
       ▼
-Data Preprocessing
+Preprocessing Pipeline
 (StandardScaler + OneHotEncoder)
       │
       ▼
@@ -86,16 +96,23 @@ Hyperparameter Tuning
 Model Evaluation
       │
       ▼
-Feature Importance
+SHAP Explainability
+      │
+      ▼
+Model Serialization
+(Joblib)
+      │
+      ▼
+Streamlit Deployment
 ```
 
 ---
 
-# 📈 Model Comparison
+# 📈 Model Performance
 
 | Metric | Logistic Regression | XGBoost |
 |---------|--------------------:|---------:|
-| Accuracy | 0.95 | 1.00* |
+| Accuracy | 95% | 99.98%* |
 | Precision | 0.02 | 0.95 |
 | Recall | 0.94 | 0.75 |
 | F1 Score | 0.04 | 0.84 |
@@ -105,13 +122,52 @@ Feature Importance
 
 ---
 
+# 🔍 Explainable AI
+
+The project incorporates **SHAP (SHapley Additive exPlanations)** to interpret model predictions.
+
+Implemented visualizations include:
+
+- SHAP Summary Plot
+- SHAP Feature Importance Plot
+- SHAP Waterfall Plot
+- Individual Prediction Explanation
+
+These visualizations improve model transparency and help understand how different features influence fraud predictions.
+
+---
+
+# 🌐 Streamlit Application
+
+The project includes an interactive Streamlit web application that allows users to:
+
+- Enter transaction details
+- Predict Fraud / Legitimate transactions
+- View fraud probability
+- Display transaction risk level
+- Use the trained XGBoost pipeline directly
+
+---
+
 # 📂 Repository Structure
 
 ```text
 Financial-Fraud-Detection/
 │
+├── app/
+│   └── app.py
+│
+├── data/
+│   └── AIML Dataset.csv
+│
+├── models/
+│   └── best_xgb_pipeline.pkl
+│
 ├── notebooks/
-│   └── 01_EDA.ipynb
+│   ├── 01_Fraud_Detection.ipynb
+│   └── 02_SHAP_Explainability.ipynb
+│
+├── images/
 │
 ├── README.md
 ├── requirements.txt
@@ -120,18 +176,18 @@ Financial-Fraud-Detection/
 
 ---
 
-# 🚀 Getting Started
+# 🚀 Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/charan13-tech/financial-fraud-detection.git
+git clone https://github.com/yourusername/Financial-Fraud-Detection.git
 ```
 
-Move into the project
+Move into the project directory
 
 ```bash
-cd financial-fraud-detection
+cd Financial-Fraud-Detection
 ```
 
 Install dependencies
@@ -140,59 +196,66 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Launch Jupyter Notebook
+Run the Streamlit application
 
 ```bash
-jupyter notebook
-```
-
-Open
-
-```text
-notebooks/01_EDA.ipynb
+streamlit run app/app.py
 ```
 
 ---
 
-# 📌 Current Progress
+# 📸 Project Screenshots
 
-- ✅ Data preprocessing pipeline
-- ✅ Logistic Regression baseline
-- ✅ XGBoost classifier
-- ✅ Hyperparameter tuning
-- ✅ Model comparison
-- ✅ Feature importance analysis
+## Streamlit Application
 
----
+> Add a screenshot here.
 
-# 🔮 Planned Enhancements
-
-- SHAP Explainability
-- FastAPI REST API
-- Streamlit Dashboard
-- Docker Containerization
-- Model Serialization
-- Cloud Deployment
+```
+images/app.png
+```
 
 ---
 
-# 📚 Skills Demonstrated
+## SHAP Summary Plot
 
+> Add a screenshot here.
+
+```
+images/shap_summary.png
+```
+
+---
+
+# 🎯 Skills Demonstrated
+
+- Data Analysis
 - Exploratory Data Analysis
-- Data Preprocessing
 - Feature Engineering
+- Data Preprocessing
 - Machine Learning
-- Ensemble Learning
+- Scikit-Learn Pipelines
+- Logistic Regression
+- XGBoost
 - Hyperparameter Optimization
 - Model Evaluation
-- Explainable AI (planned)
-- MLOps Fundamentals (planned)
+- Explainable AI (SHAP)
+- Streamlit Deployment
+- Model Serialization
 
 ---
 
-# 🤝 Contributing
+# 🔮 Future Improvements
 
-Contributions are welcome. Feel free to fork the repository and submit a pull request.
+- FastAPI REST API
+- Docker Containerization
+- Cloud Deployment (Render / Streamlit Cloud)
+- Real-Time Fraud Detection Pipeline
+- Monitoring & Logging
 
 ---
 
+
+
+IIT Kharagpur
+
+Feel free to connect or raise an issue if you have suggestions or questions regarding the project.
